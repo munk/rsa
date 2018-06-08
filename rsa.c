@@ -12,7 +12,7 @@
 uint64_t random_number() {
   char* buf = malloc(5);
   getrandom(buf, 4, 0);
-  uint64_t number = buf[0] | buf[1] << 8 | buf[2] << 16 | buf[3] << 32;
+  uint64_t number = buf[0] | buf[1] << 8 | buf[2] << 16 | buf[3] << 24;
   free(buf);
   return abs(number);
 }
